@@ -12,8 +12,9 @@ public class BuddyInfo {
 
     public static void main(String[] args) {
         AddressBook buddies = new AddressBook();
-        BuddyInfo homer = new BuddyInfo("Homer");
+        BuddyInfo homer = new BuddyInfo("Homer Simpson");
 
-        System.out.println("Hello " + homer.getName());
+        buddies.addBuddy("Homer Simpson", homer);
+        buddies.removeBuddy("Homer Simpson");
     }
 }
