@@ -1,8 +1,10 @@
+import java.util.Collection;
 import java.util.Map;
 import java.util.HashMap;
 
 public class AddressBook {
 
+    // underlying data
     private Map<String, BuddyInfo> buddies;
 
     public AddressBook() {
@@ -23,5 +25,15 @@ public class AddressBook {
         } else {
             System.out.println("There was no BuddyInfo associated with name '" + name + "' to remove.");
         }
+    }
+
+    public String toString() {
+        Collection<BuddyInfo> buddyList = this.buddies.values();
+        String[] contents = new String[buddyList.size()];
+        int i = 0;
+        for (BuddyInfo buddy : buddyList) {
+            contents[i++] = buddy.toString();
+        }
+        return "AddressBook contents:\n" + String.join("\n", contents);
     }
 }
